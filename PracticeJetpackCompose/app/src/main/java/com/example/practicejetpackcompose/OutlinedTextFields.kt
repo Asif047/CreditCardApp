@@ -125,85 +125,10 @@ fun OutlinedTextFieldPassword(onValueChanged: (String) -> Unit) {
 @Composable
 fun OutlinedTextFieldCardHolderId(onValueChanged: (String) -> Unit) {
     val text = remember { mutableStateOf(TextFieldValue("")) }
+
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        colors = CardDefaults.cardColors(Color.White),
-        elevation = CardDefaults.cardElevation(10.dp)
-    ) {
-
-
-        TextField(
-            value = text.value, onValueChange = {text.value =it}, modifier = Modifier.padding(0.dp).height(60.dp),
-            placeholder = {
-                Text(
-                    text = "* * * * * * * * *",
-                    color = Color.Gray
-                )
-            },
-
-            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
-                unfocusedLabelColor = Color.White,
-                focusedLabelColor = Color.White,
-                cursorColor = Color.Black,
-                textColor = Color.Black,
-
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                backgroundColor = Color.White
-            ),
-
-            )
-
-
-    }
-}
-
-@Composable
-fun OutlinedTextFieldCardNumber(onValueChanged: (String) -> Unit) {
-    val text = remember { mutableStateOf(TextFieldValue("")) }
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        colors = CardDefaults.cardColors(Color.White),
-        elevation = CardDefaults.cardElevation(10.dp)
-    ) {
-
-
-        TextField(
-            value = text.value, onValueChange = {text.value =it}, modifier = Modifier.padding(0.dp).height(60.dp),
-            placeholder = {
-                Text(
-                    text = "* * * *   * * * *   * * * *   * * * *",
-                    color = Color.Gray
-                )
-            },
-
-            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
-                unfocusedLabelColor = Color.White,
-                focusedLabelColor = Color.White,
-                cursorColor = Color.Black,
-                textColor = Color.Black,
-
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                backgroundColor = Color.White
-            ),
-
-            )
-
-
-    }
-}
-
-@Composable
-fun OutlinedTextFieldCardHolderName(onValueChanged: (String) -> Unit) {
-    val text = remember { mutableStateOf(TextFieldValue("")) }
-    Card(
-        modifier = Modifier
-            .height(50.dp),
+            .height(50.dp) .fillMaxWidth(),
         colors = CardDefaults.cardColors(Color.White),
         elevation = CardDefaults.cardElevation(10.dp)
     ) {
@@ -211,12 +136,122 @@ fun OutlinedTextFieldCardHolderName(onValueChanged: (String) -> Unit) {
             value = text.value,
             onValueChange = {
                 text.value = it
-                Log.e("###AAA:", it.text)
+                onValueChanged(it.text)
             },
             modifier = Modifier.padding(0.dp).height(60.dp),
             placeholder = {
                 Text(
-                    text = "",
+                    text = "* * * * * * * * *",
+                    color = Color.Gray
+                )
+            },
+            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
+                unfocusedLabelColor = Color.White,
+                focusedLabelColor = Color.White,
+                cursorColor = Color.Black,
+                textColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                backgroundColor = Color.White
+            ),
+        )
+    }
+}
+
+@Composable
+fun OutlinedTextFieldCardNumber(onValueChanged: (String) -> Unit) {
+    val text = remember { mutableStateOf(TextFieldValue("")) }
+
+    Card(
+        modifier = Modifier
+            .height(50.dp) .fillMaxWidth(),
+        colors = CardDefaults.cardColors(Color.White),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ) {
+        TextField(
+            value = text.value,
+            onValueChange = {
+                text.value = it
+                onValueChanged(it.text)
+            },
+            modifier = Modifier.padding(0.dp).height(60.dp),
+            placeholder = {
+                Text(
+                    text = "* * * *   * * * *   * * * *   * * * *",
+                    color = Color.Gray
+                )
+            },
+            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
+                unfocusedLabelColor = Color.White,
+                focusedLabelColor = Color.White,
+                cursorColor = Color.Black,
+                textColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                backgroundColor = Color.White
+            ),
+        )
+    }
+}
+
+
+
+@Composable
+fun OutlinedTextFieldCardHolderCVV(onValueChanged: (String) -> Unit) {
+    val text = remember { mutableStateOf(TextFieldValue("")) }
+
+    Card(
+        modifier = Modifier
+            .height(50.dp) .fillMaxWidth(),
+        colors = CardDefaults.cardColors(Color.White),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ) {
+        TextField(
+            value = text.value,
+            onValueChange = {
+                text.value = it
+                onValueChanged(it.text)
+            },
+            modifier = Modifier.padding(0.dp).height(60.dp),
+            placeholder = {
+                Text(
+                    text = "* * *",
+                    color = Color.Gray
+                )
+            },
+            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
+                unfocusedLabelColor = Color.White,
+                focusedLabelColor = Color.White,
+                cursorColor = Color.Black,
+                textColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                backgroundColor = Color.White
+            ),
+        )
+    }
+}
+
+@Composable
+fun OutlinedTextFieldCardHolderDate(onValueChanged: (String) -> Unit) {
+    val text = remember { mutableStateOf(TextFieldValue("")) }
+
+    Card(
+        modifier = Modifier
+            .height(50.dp) .fillMaxWidth(),
+        colors = CardDefaults.cardColors(Color.White),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ) {
+        TextField(
+            value = text.value,
+            onValueChange = {
+                text.value = it
+                onValueChanged(it.text)
+            },
+            modifier = Modifier.padding(0.dp).height(60.dp),
+            placeholder = {
+                Text(
+                    text = "* * / * *",
                     color = Color.Gray
                 )
             },
@@ -235,89 +270,12 @@ fun OutlinedTextFieldCardHolderName(onValueChanged: (String) -> Unit) {
 
 
 @Composable
-fun OutlinedTextFieldCardHolderCVV(onValueChanged: (String) -> Unit) {
-    val text = remember { mutableStateOf(TextFieldValue("")) }
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        colors = CardDefaults.cardColors(Color.White),
-        elevation = CardDefaults.cardElevation(10.dp)
-    ) {
-
-
-        TextField(
-            value = text.value, onValueChange = {text.value =it}, modifier = Modifier.padding(0.dp).height(60.dp),
-            placeholder = {
-                Text(
-                    text = "* * *",
-                    color = Color.Gray
-                )
-            },
-
-            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
-                unfocusedLabelColor = Color.White,
-                focusedLabelColor = Color.White,
-                cursorColor = Color.Black,
-                textColor = Color.Black,
-
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                backgroundColor = Color.White
-            ),
-
-            )
-
-
-    }
-}
-
-@Composable
-fun OutlinedTextFieldCardHolderDate(onValueChanged: (String) -> Unit) {
-    val text = remember { mutableStateOf(TextFieldValue("")) }
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        colors = CardDefaults.cardColors(Color.White),
-        elevation = CardDefaults.cardElevation(10.dp)
-    ) {
-
-
-        TextField(
-            value = text.value, onValueChange = {text.value =it}, modifier = Modifier.padding(0.dp).height(60.dp),
-            placeholder = {
-                Text(
-                    text = "* * / * *",
-                    color = Color.Gray
-                )
-            },
-
-            colors = androidx.compose.material.TextFieldDefaults.textFieldColors(
-                unfocusedLabelColor = Color.White,
-                focusedLabelColor = Color.White,
-                cursorColor = Color.Black,
-                textColor = Color.Black,
-
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                backgroundColor = Color.White
-            ),
-
-            )
-
-
-    }
-}
-
-
-@Composable
-fun OutlinedTextFieldCardHolderName2(onValueChanged: (String) -> Unit) {
+fun OutlinedTextFieldCardHolderName(onValueChanged: (String) -> Unit) {
     val text = remember { mutableStateOf(TextFieldValue("")) }
 
     Card(
         modifier = Modifier
-            .height(50.dp),
+            .height(50.dp) .fillMaxWidth(),
         colors = CardDefaults.cardColors(Color.White),
         elevation = CardDefaults.cardElevation(10.dp)
     ) {

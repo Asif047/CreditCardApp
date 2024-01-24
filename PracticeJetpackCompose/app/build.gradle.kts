@@ -76,5 +76,6 @@ dependencies {
     implementation("com.google.accompanist:accompanist-pager-indicators:0.28.0")
 
     implementation("androidx.compose.ui:ui-util:1.5.4")
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
 
 }
